@@ -1,5 +1,6 @@
 section.hero {
   @include outer-container;
+  @include pad();
 
   article{
     @include span-columns(10);
@@ -11,16 +12,8 @@ section.hero {
       display: inherit;
     }
     h2{
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2em;
-      letter-spacing: -0.04em;
-      line-height: 1em;
       text-align: center;
       margin: 0.5em auto;
-
-      @include media($desktop) {
-        font-size: 4.5em;
-      }
     }
     p{
       line-height: 1.8em;

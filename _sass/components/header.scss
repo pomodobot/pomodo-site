@@ -1,8 +1,10 @@
 header.site-header {
   @include outer-container;
+  @include pad();
+
   .logo {
     @include span-columns(4);
-    padding: 3em 0;
+    padding: 0.5em 0;
     img{
       height: 50px;
     }
@@ -11,7 +13,7 @@ header.site-header {
     @include shift(2);
     @include span-columns(6);
     text-align: right;
-    padding: 3em 0;
+    padding: 0.5em 0;
     ul{
       list-style: none;
       margin: 0 auto;

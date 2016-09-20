@@ -1,0 +1,16 @@
+section.contact{
+  header.contact-header{
+    @include pad();
+    width: 100%;
+    padding: 6em;
+    background-color: #c44240;
+    background-image: url(../assets/image/tomato-bg.jpg);
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+
+    p{
+      margin: 1em 0 0 0;
+    }
+  }
+}

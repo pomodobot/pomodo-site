@@ -1,0 +1,26 @@
+h1, h2, h3{
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.04em;
+  line-height: 1em;
+  margin: 0;
+}
+
+h1{
+  font-size: 3em;
+}
+
+h2{
+  font-size: 2.2em;
+
+  @include media($desktop) {
+    font-size: 4.2em;
+  }
+}
+
+h3{
+  font-size: 1.4em;
+
+  @include media($desktop) {
+    font-size: 2.5em;
+  }
+}
