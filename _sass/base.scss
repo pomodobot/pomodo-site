@@ -1,9 +1,14 @@
-body{
-  background: purple;
+html{
+  height: 100%;
 }
 
-section {
-  @include outer-container;
-  header { @include span-columns(3); }
-  section { @include span-columns(9); }
+body{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.logo{
+  @include vertical-align();
 }
