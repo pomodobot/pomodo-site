@@ -1,0 +1,33 @@
+section.hero {
+  @include outer-container;
+
+  article{
+    @include span-columns(10);
+    @include shift(1);
+    img{
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      display: inherit;
+    }
+    h2{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2em;
+      letter-spacing: -0.04em;
+      line-height: 1em;
+      text-align: center;
+      margin: 0.5em auto;
+
+      @include media($desktop) {
+        font-size: 4.5em;
+      }
+    }
+    p{
+      line-height: 1.8em;
+      text-align: center;
+    }
+    button{
+      margin: 3em auto;
+    }
+  }
+}

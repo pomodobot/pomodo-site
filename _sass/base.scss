@@ -1,15 +1,27 @@
+$mobile: new-breakpoint(max-width 480px);
+$desktop: new-breakpoint(min-width 850px);
+
 html{
   height: 100%;
+}
+
+::selection {
+  background: #c44240;
+  color: white;
+}
+::-moz-selection {
+  background: #c44240;
+  color: white;
 }
 
 body{
   height: 100%;
   width: 100%;
-  text-align: center;
   margin: 0;
+  background: #f9fafb;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.logo{
-  @include vertical-align();
-  width: 20%;
+a, a:visited, a:active{
+  color: black;
 }

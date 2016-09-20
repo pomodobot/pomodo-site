@@ -1,0 +1,35 @@
+header.site-header {
+  @include outer-container;
+  .logo {
+    @include span-columns(4);
+    padding: 3em 0;
+    img{
+      height: 50px;
+    }
+  }
+  .menu {
+    @include shift(2);
+    @include span-columns(6);
+    text-align: right;
+    padding: 3em 0;
+    ul{
+      list-style: none;
+      margin: 0 auto;
+      li{
+        display: inline;
+        margin: 0;
+
+        a:link, a:visited{
+          display: inline-block;
+          line-height: 50px;
+          padding: 5px 2em;
+          text-decoration: none;
+        }
+
+        a:last-child{
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
