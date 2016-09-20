@@ -1,0 +1,14 @@
+# Site settings
+title: Pomodo
+author: Afonso França and Thiago Sciotta
+description: Our virtual portfolio.
+meta_description: Software developers at all!
+
+google_analytics_id: UA-84379893-1
+
+# Build settings
+exclude: [node_modules, package.json, npm-debug.log, Gruntfile.js, scss]
+repository: "pomodobot/pomodobot.github.io"
+gems: [bourbon, neat]
+sass:
+  style: compressed
