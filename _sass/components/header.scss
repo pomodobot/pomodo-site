@@ -2,14 +2,38 @@ header.site-header {
   @include outer-container;
   @include pad();
 
+  @include media($mobile) {
+    height: 70px;
+    z-index: 2;
+  }
+
   .logo {
-    @include span-columns(4);
     padding: 0.5em 0;
+    @include media($mobile) {
+      background: #ffffff;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      text-align: center;
+    }
+
+    @include media($desktop) {
+      @include span-columns(4);
+    }
+
     img{
       height: 50px;
+      @include media($mobile) {
+        margin: 0 auto;
+      }
     }
   }
   .menu {
+    @include media($mobile) {
+      display: none;
+    }
+
     @include shift(2);
     @include span-columns(6);
     text-align: right;

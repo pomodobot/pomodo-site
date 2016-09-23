@@ -6,18 +6,34 @@ section.hero {
     @include span-columns(10);
     @include shift(1);
     img{
-      width: 60%;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
       display: inherit;
+
+      @include media($mobile) {
+        margin-top: 2em;
+      }
+
+      @include media($desktop) {
+        width: 60%;
+      }
     }
     h2{
       text-align: center;
-      margin: 0.5em auto;
+      margin: 1em auto 1.5em;
+
+      @include media($desktop) {
+        margin: 0.5em auto;
+      }
     }
     p{
       line-height: 1.8em;
-      text-align: center;
+      text-align: justify;
+
+      @include media($desktop) {
+        text-align: center;
+      }
     }
     button{
       margin: 3em auto;
