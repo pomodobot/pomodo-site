@@ -2,15 +2,62 @@ section.contact{
   header.contact-header{
     @include pad();
     width: 100%;
-    padding: 6em;
+    padding: 3em;
     background-color: #c44240;
     background-image: url(../assets/image/tomato-bg.jpg);
     background-position: center;
+    background-size: cover;
     color: #ffffff;
     text-align: center;
 
+    @include media($desktop) {
+      padding: 8em;
+    }
+
     p{
       margin: 1em 0 0 0;
+    }
+  }
+
+  .form-container{
+    @include pad();
+
+    .form{
+      @include span-columns(8);
+      @include shift(2);
+      @include pad();
+    }
+
+    .form-row{
+      @include row();
+    }
+
+    .input{
+      max-width: initial;
+      @include pad(0 0 2.5em 0);
+    }
+  }
+
+  .full-size{
+    @include span-columns(8 of 8);
+  }
+
+  .half-size{
+    @include span-columns(4 of 8);
+  }
+
+  .contact-item{
+    margin-top: 2em;
+
+    .contact-item--description {
+      line-height: 40px;
+      vertical-align: top;
+      margin-left: 0.8em;
+      margin-right: 2em;
+    }
+
+    .contact-item--description:last-child{
+      margin-right: 0;
     }
   }
 }
