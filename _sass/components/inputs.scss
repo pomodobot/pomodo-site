@@ -11,7 +11,7 @@
   position: relative;
   display: block;
   float: right;
-  padding: 1.4em;
+  padding: 1em;
   width: 60%;
   border: none;
   border-radius: 0;
@@ -20,6 +20,10 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   -webkit-appearance: none; /* for box shadows to show on iOS */
+
+  @include media($desktop) {
+    padding: 1.4em;
+  }
 }
 
 .input__field:focus {
@@ -69,12 +73,15 @@
   pointer-events: none;
   overflow: hidden;
   padding: 0 1.25em;
-  -webkit-transform: translate3d(0, 3em, 0);
-  transform: translate3d(0, 3.6em, 0);
+  transform: translate3d(0, 3.1em, 0);
   -webkit-transition: -webkit-transform 0.25s;
   transition: transform 0.25s ;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+
+  @include media($desktop) {
+    transform: translate3d(0, 3.6em, 0);
+  }
 }
 
 .input__label-content--yoshiko {

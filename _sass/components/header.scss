@@ -4,18 +4,19 @@ header.site-header {
 
   @include media($mobile) {
     height: 70px;
-    z-index: 2;
   }
 
   .logo {
     padding: 0.5em 0;
     @include media($mobile) {
       background: #ffffff;
+      border-bottom: 2px solid #e8e8e8;
       position: fixed;
       top: 0;
       right: 0;
       left: 0;
       text-align: center;
+      z-index: 2;
     }
 
     @include media($desktop) {
