@@ -58,7 +58,7 @@ section.contact{
 
   .half-size{
     @include media($mobile) {
-      @include span-columns(6 of 12);
+      @include span-columns(12 of 12);
     }
 
     @include media($desktop) {
