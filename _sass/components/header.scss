@@ -10,7 +10,7 @@ header.site-header {
     padding: 0.5em 0;
     @include media($mobile) {
       background: #ffffff;
-      border-bottom: 2px solid #e8e8e8;
+      border-bottom: 1px solid #e8e8e8;
       position: fixed;
       top: 0;
       right: 0;

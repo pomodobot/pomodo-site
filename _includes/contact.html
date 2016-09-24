@@ -19,25 +19,25 @@
 		</div>
 
 		<div class="form">
-			<form>
+			<form id="contact-form" class="contact-form" data-success="Message successfully sent!">
 				<div class="form-row">
 					<span class="input input--yoshiko full-size">
-						<input class="input__field input__field--yoshiko" type="text" id="nome" />
-						<label class="input__label input__label--yoshiko" for="nome">
+						<input class="input__field input__field--yoshiko" type="text" name="name" id="name" />
+						<label class="input__label input__label--yoshiko" for="name">
 							<span class="input__label-content input__label-content--yoshiko" data-content="NOME">NOME</span>
 						</label>
 					</span>
 				</div>
 				<div class="form-row">
 					<span class="input input--yoshiko half-size">
-						<input class="input__field input__field--yoshiko" type="email" id="email" />
+						<input class="input__field input__field--yoshiko" type="email" name="email" id="email" />
 						<label class="input__label input__label--yoshiko" for="email">
 							<span class="input__label-content input__label-content--yoshiko" data-content="E-MAIL">E-MAIL</span>
 						</label>
 					</span>
 
 					<span class="input input--yoshiko half-size">
-						<input class="input__field input__field--yoshiko" type="email" id="telefone" />
+						<input class="input__field input__field--yoshiko" name="phone" id="phone" />
 						<label class="input__label input__label--yoshiko" for="email">
 							<span class="input__label-content input__label-content--yoshiko" data-content="TELEFONE">TELEFONE</span>
 						</label>
@@ -46,9 +46,10 @@
 
 				<div class="form-row">
 					<div class="full-size centered-text">
-						<button class="button button--wapasha button--round-1 button--form">Enviar</button>
+						<button class="button button--wapasha button--round-1 button--form" type="submit">Enviar</button>
 					</div>
 				</div>
+
 			</form>
 		</div>
 	</div>
