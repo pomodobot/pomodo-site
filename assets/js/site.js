@@ -134,7 +134,6 @@
         };
 
         plugin.changeFormButtonStatus(false);
-        plugin.modalOverflow.classList.add('visible');
 
         var req = new XMLHttpRequest();
         req.open('POST', 'https://pomodo-contact-form.herokuapp.com/send_email', true);
@@ -148,11 +147,13 @@
                 if (req.status === OK){
                     plugin.changeFormButtonStatus(true);
                     plugin.modal.classList.add('success');
+                    plugin.modalOverflow.classList.add('visible');
                     plugin.modal.classList.add('opened');
                 }
             } else {
                 if(req.status !== OK){
                     plugin.changeFormButtonStatus(true);
+                    plugin.modalOverflow.classList.add('visible');
                     plugin.modal.classList.add('opened');
                 }
             }
