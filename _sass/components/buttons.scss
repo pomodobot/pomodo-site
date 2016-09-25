@@ -59,6 +59,11 @@
   background: #aaaaaa;
   border-color: #aaaaaa;
   color: white;
+
+  &::before{
+    border: none;
+  }
+
 }
 
 .button--wapasha::before {

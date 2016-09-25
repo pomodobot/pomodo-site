@@ -8,6 +8,9 @@ header.site-header {
 
   .logo {
     padding: 0.5em 0;
+    text-align: center;
+    margin: 0 auto;
+
     @include media($mobile) {
       background: #ffffff;
       border-bottom: 1px solid #e8e8e8;
@@ -20,7 +23,7 @@ header.site-header {
     }
 
     @include media($desktop) {
-      @include span-columns(4);
+      @include span-columns(12);
     }
 
     img{
