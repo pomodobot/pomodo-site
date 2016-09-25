@@ -43,10 +43,14 @@ section.contact{
       padding: 2em;
       transform: translate(-50%,-50%) scale(0.4);
       box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
-      width: 35%;
+      width: 95%;
       background: #ffffff;
       z-index: 4;
       opacity: 0;
+
+      @include media($desktop) {
+        width: 35%;
+      }
 
       &.opened{
         animation: modal 0.5s linear forwards;
