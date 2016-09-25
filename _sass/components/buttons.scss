@@ -57,6 +57,8 @@
 
 .button.button--wapasha[disabled=disabled], .button.button--wapasha:disabled {
   background: #aaaaaa;
+  border-color: #aaaaaa;
+  color: white;
 }
 
 .button--wapasha::before {

@@ -31,7 +31,12 @@ section.contact{
       left: 0;
       z-index: 3;
       display: none;
-      
+      background: rgba(0,0,0,0.6);
+
+      @include media($desktop) {
+        background: none;
+      }
+
       &.visible{
         display: block;
       }
