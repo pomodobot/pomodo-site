@@ -1,31 +1,44 @@
-$(document).ready(function () {
-    var contactFormHost = 'https://pomodo-contact-form.herokuapp.com/',
-        form = $('#contact-form'),
-        notice = form.find('#notice');
+(function () {
+    var plugin = {};
 
-    form.submit(function(ev){
-        ev.preventDefault();
+    plugin.form = document.querySelector('.contact-form');
+    plugin.modal = document.querySelector('.form--modal');
+    plugin.modalOverflow = document.querySelector('.form--overflow');
+    plugin.modalCloseBtn = document.querySelector('.close--modal');
 
-        $.ajax({
-            type: 'POST',
-            url: contactFormHost + 'send_email',
-            data: form.serialize(),
-            dataType: 'json',
-            success: function(response) {
-                switch (response.message) {
-                    case 'success':
-                        form.fadeOut(function() {
-                            form.html('<h4>' + form.data('success') + '</h4>').fadeIn();
-                        });
-                        break;
+    plugin.closeModal = function () {
+        plugin.modal.classList.remove('opened');
+        plugin.modalOverflow.classList.remove('visible');
+    };
 
-                    case 'failure_email':
-                        notice.text(notice.data('error')).fadeIn();
-                }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                notice.text(notice.data('error')).fadeIn();
+    plugin.submitForm = function () {
+        var data = {
+            name: document.querySelector('#name').value,
+            email: document.querySelector('#email').value,
+            phone: document.querySelector('#phone').value
+        };
+
+        var req = new XMLHttpRequest();
+        req.open('POST', 'https://pomodo-contact-form.herokuapp.com/send_email', true);
+        req.setRequestHeader('Accept', 'application/json');
+
+        req.onreadystatechange = function () {
+            var DONE = 4;
+            var OK = 200;
+            if (req.readyState === DONE) {
+                if (req.status === OK)
+                    console.log(req.responseText);
+            } else {
+                plugin.modal.classList.add('opened');
+                plugin.modalOverflow.classList.add('visible');
+                console.log('Error: ' + req.status);
             }
-        });
-    });
-});
+        };
+
+        req.send(JSON.stringify(data));
+        return false;
+    };
+
+    plugin.modalCloseBtn.addEventListener('click', plugin.closeModal, false);
+    plugin.form.onsubmit = plugin.submitForm;
+})();

@@ -18,7 +18,7 @@ body{
   height: 100%;
   width: 100%;
   margin: 0;
-  background: #f9fafb;
+  background: #fbfbfb;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -28,4 +28,41 @@ a, a:visited, a:active{
 
 .centered-text{
   text-align: center;
+}
+
+.arrow-up{
+  position: fixed;
+  bottom: -4em;
+  right: 2em;
+  animation: arrow 1s infinite;
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+
+  &.visible{
+    bottom: 2em;
+  }
+
+  &:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+
+    path{
+      fill: #aaaaaa;
+    }
+
+  }
+}
+
+@keyframes arrow {
+  0% {
+    transform: translate(0, 0.5em)
+  }
+  50% {
+    transform: translate(0, 0em)
+  }
+  100% {
+    transform: translate(0, 0.5em)
+  }
 }

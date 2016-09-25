@@ -15,6 +15,10 @@
   text-align: center;
   text-decoration: none;
 
+  &:focus{
+    outline: 0;
+  }
+
   @include media($desktop) {
     padding: 1em 2em;
   }
@@ -45,6 +49,10 @@
   color: #fff;
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
+
+  &:focus{
+    background: #9e403e;
+  }
 }
 .button--wapasha::before {
   content: '';
