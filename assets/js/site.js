@@ -102,6 +102,7 @@
     var plugin = {};
 
     plugin.form = document.querySelector('.contact-form');
+    plugin.formBtn = document.querySelector('.button--form');
     plugin.modal = document.querySelector('.form--modal');
     plugin.modalOverflow = document.querySelector('.form--overflow');
     plugin.modalCloseBtn = document.querySelector('.close--modal');
@@ -109,6 +110,20 @@
     plugin.closeModal = function () {
         plugin.modal.classList.remove('opened');
         plugin.modalOverflow.classList.remove('visible');
+
+        window.setTimeout(function(){
+            plugin.modal.classList.remove('success');
+        }, 1000);
+    };
+
+    plugin.changeFormButtonStatus = function (enable) {
+        if(enable){
+            plugin.formBtn.innerHTML = 'Enviar';
+            plugin.formBtn.disabled = false;
+        }else{
+            plugin.formBtn.innerHTML = 'Enviado...';
+            plugin.formBtn.disabled = true;
+        }
     };
 
     plugin.submitForm = function () {
@@ -118,20 +133,28 @@
             phone: document.querySelector('#phone').value
         };
 
+        plugin.changeFormButtonStatus(false);
+        plugin.modalOverflow.classList.add('visible');
+
         var req = new XMLHttpRequest();
         req.open('POST', 'https://pomodo-contact-form.herokuapp.com/send_email', true);
         req.setRequestHeader('Accept', 'application/json');
 
         req.onreadystatechange = function () {
-            var DONE = 4;
-            var OK = 200;
+            var DONE = 4,
+                OK = 200;
+
             if (req.readyState === DONE) {
-                if (req.status === OK)
-                    console.log(req.responseText);
+                if (req.status === OK){
+                    plugin.changeFormButtonStatus(true);
+                    plugin.modal.classList.add('success');
+                    plugin.modal.classList.add('opened');
+                }
             } else {
-                plugin.modal.classList.add('opened');
-                plugin.modalOverflow.classList.add('visible');
-                console.log('Error: ' + req.status);
+                if(req.status !== OK){
+                    plugin.changeFormButtonStatus(true);
+                    plugin.modal.classList.add('opened');
+                }
             }
         };
 

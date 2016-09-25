@@ -54,6 +54,11 @@
     background: #9e403e;
   }
 }
+
+.button.button--wapasha[disabled=disabled], .button.button--wapasha:disabled {
+  background: #aaaaaa;
+}
+
 .button--wapasha::before {
   content: '';
   position: absolute;

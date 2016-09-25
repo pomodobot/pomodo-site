@@ -56,6 +56,20 @@ section.contact{
         animation: modal 0.5s linear forwards;
       }
 
+      &.success{
+        .error-message{
+          display: none;
+        }
+
+        .success-message{
+          display: block;
+        }
+      }
+
+      .success-message{
+        display: none;
+      }
+
       h4{
         font-size: 1.4em;
       }
