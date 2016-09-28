@@ -15,8 +15,8 @@
   width: 60%;
   border: none;
   border-radius: 0;
-  background: #f0f0f0;
-  color: #aaa;
+  background: #d1d1d1;
+  color: #8f8f8f;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   -webkit-appearance: none; /* for box shadows to show on iOS */
@@ -58,7 +58,7 @@
 /* Yoshiko */
 .input__field--yoshiko {
   width: 100%;
-  background-color: #e8e8e8;
+  background-color: #d1d1d1;
   border: 2px solid transparent;
   border-radius: 40px;
   -webkit-transition: background-color 0.25s, border-color 0.25s;
@@ -122,6 +122,6 @@
 
 .input__field--yoshiko:focus + .input__field--yoshiko,
 .input--filled .input__field--yoshiko {
-  background-color: transparent;
-  border-color: #e8e8e8;
+  background-color: #e8e8e8;
+  border-color: #d1d1d1;
 }
